@@ -1,0 +1,11 @@
+{
+  "name": "node_jwt-server",
+  "version": "1.0.0",
+  "description": "Simple login and register server with nodejs and jt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Deni",
+  "license": "ISC"
+}
