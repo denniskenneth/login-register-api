@@ -1,11 +1,19 @@
 {
   "name": "node_jwt-server",
   "version": "1.0.0",
-  "description": "Simple login and register server with nodejs and jt",
+  "description": "Simple login and register server created using nodejs and jwt",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Deni",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.3",
+    "express-unless": "^1.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.4",
+    "mongoose-unique-validator": "^3.0.0"
+  }
 }
