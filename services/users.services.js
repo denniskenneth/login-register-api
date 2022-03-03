@@ -1,6 +1,6 @@
 const User = require('../models/user.model');
 const bcrypt = require('bcryptjs');
-const auth = required('../middlewares/auth.js');
+const auth = require('../middlewares/auth.js');
 
 async function login({ username, password }, callback) {
   const user = await User.findOne({ username });
@@ -14,5 +14,30 @@ async function login({ username, password }, callback) {
         message: 'Invalid Username/Password',
       });
     }
+  } else {
+    return callback({
+      message: 'Invalid Username/Password',
+    });
   }
 }
+
+async function register(params, callback) {
+  if (params.username === undefined) {
+    return callback({ message: 'Username Required' });
+  }
+
+  const user = new User(params);
+  user
+    .save()
+    .then((response) => {
+      return callback(null, response);
+    })
+    .catch((error) => {
+      return callback(error);
+    });
+}
+
+module.exports = {
+  login,
+  register,
+};
