@@ -30,3 +30,8 @@ userSchema.set('toJSON', {
     delete returnedObject.password;
   },
 });
+
+userSchema.plugin(uniqueValidator, { message: 'Email already in use.' });
+
+const User = mongoose.model('user', userSchema);
+module.exports = User;
