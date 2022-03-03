@@ -37,7 +37,7 @@ app.use(
 
 app.use(express.json());
 
-app.use('/users', require('./routes/users.routes'));
+app.use('/users', require('./routes/user.route'));
 
 app.use(errors.errorHandler);
 
